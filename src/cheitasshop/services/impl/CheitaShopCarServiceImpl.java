@@ -1,7 +1,7 @@
 package cheitasshop.services.impl;
 
 import cheitasshop.entities.Car;
-import cheitasshop.entities.valueobject.CarBodyColor;
+import cheitasshop.entities.valueobject.BodyColor;
 import cheitasshop.services.CheitaShopCarService;
 
 public class CheitaShopCarServiceImpl implements CheitaShopCarService {
@@ -12,7 +12,7 @@ public class CheitaShopCarServiceImpl implements CheitaShopCarService {
 	}
 
 	@Override
-	public void customize(Car car, CarBodyColor desiredBodyColor) {
+	public void customize(Car car, BodyColor desiredBodyColor) {
 		// TODO Auto-generated method stub
 		
 	}

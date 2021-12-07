@@ -1,31 +1,32 @@
 package cheitasshop.entities;
 
-import cheitasshop.entities.valueobject.CarBodyColor;
-import cheitasshop.entities.valueobject.CarBrand;
+
+import cheitasshop.entities.valueobject.BodyColor;
+import cheitasshop.entities.valueobject.Brand;
 
 public class Car1 {
-private String carBrand;
-private String carBodyColor;
-private boolean motor;
+    private Brand carBrand;
+    private BodyColor carBodyColor;
+    private boolean motor;
 
-public Car1 (String carBrand, boolean motor) {
-    this.carBrand=carBrand;
-    this.motor=motor;
-}
+    public Car1(Brand carBrand, boolean motor) {
+        this.carBrand = carBrand;
+        this.motor = motor;
+    }
 
-    public String getCarBrand() {
+    public Brand getCarBrand() {
         return carBrand;
     }
 
-    public void setCarBrand(String carBrand) {
+    public void setCarBrand(Brand carBrand) {
         this.carBrand = carBrand;
     }
 
-    public String getCarBodyColor() {
+    public BodyColor getCarBodyColor() {
         return carBodyColor;
     }
 
-    public void setCarBodyColor(String carBodyColor) {
+    public void setCarBodyColor(BodyColor carBodyColor) {
         this.carBodyColor = carBodyColor;
     }
 
