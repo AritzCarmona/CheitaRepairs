@@ -28,21 +28,28 @@ public class CheitasShop {
         // Wrong Car
         //cheitaShopService.repair(wrongCar);
         // Customizable Car
-        /*
-         * cheitaShopService.customize(customizableCar,desiredCustomization); //Try to
-         * customize a motorcycle
-         * cheitaShopService.customize(randomMotorcycle,desiredCustomization); //Wrong
-         * Car problem cheitaShopService.repair(wrongCarProblem); //Repairing a
-         * Motorcycle cheitaShopService.repair(reparableMotorcycle); //Wrong Motorcycle
-         * problem cheitaShopService.repair(reparableMotorcycle); //Repairing a Van
-         * cheitaShopService.repair(reparableRegularVan); //Wrong Van problem
-         * cheitaShopService.repair(wrongRegularVan); //Try to camperize a van
-         * cheitaShopService.customize(regularVan,camperize); //Repairing commercial Van
-         * cheitaShopService.repair(reparableCommercialVan); //Wrong commercial Van
-         * cheitaShopService.repair(wrongCommercialVan); //Try to camperize a commercial
-         * van cheitaShopService.customize(randomCommercialVan,camperize);
-         */
 
+//        cheitaShopService.customize(customizableCar, desiredCustomization);
+//        //Try to customize a motorcycle
+//        cheitaShopService.customize(randomMotorcycle, desiredCustomization);
+//        //Wrong Car problem
+//        cheitaShopService.repair(wrongCarProblem);
+//        // Repairing a Motorcycle
+//        cheitaShopService.repair(reparableMotorcycle);
+//        // Wrong Motorcycle problem
+//        cheitaShopService.repair(reparableMotorcycle);
+//        //Repairing a Van
+//        cheitaShopService.repair(reparableRegularVan);
+//        //Wrong Van problem
+//        cheitaShopService.repair(wrongRegularVan);
+//        //Try to camperize a van
+//        cheitaShopService.customize(regularVan, camperize);
+//        //Repairing commercial Van
+//        cheitaShopService.repair(reparableCommercialVan);
+//        //Wrong commercial Van
+//        cheitaShopService.repair(wrongCommercialVan);
+//        //Try to camperize a commercia van
+//        cheitaShopService.customize(randomCommercialVan,camperize);
     }
 }
 

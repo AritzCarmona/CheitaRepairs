@@ -10,6 +10,5 @@ public interface CheitaShopService1 {
     boolean customize(Car1 car1, BodyColor bodyColor);
     void repair(Motorbike1 moto1);
     void repair(Van1 van1);
-
-
+    boolean camperize(Object van);
 }

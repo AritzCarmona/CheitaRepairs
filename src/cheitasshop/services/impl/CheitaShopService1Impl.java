@@ -1,6 +1,7 @@
 package cheitasshop.services.impl;
 
 import cheitasshop.entities.Car1;
+import cheitasshop.entities.CommercialVan1;
 import cheitasshop.entities.Motorbike1;
 import cheitasshop.entities.Van1;
 import cheitasshop.entities.valueobject.BodyColor;
@@ -12,15 +13,15 @@ import java.util.List;
 public class CheitaShopService1Impl implements CheitaShopService1 {
 
 
-    private final static List<Brand> validBrands = List.of(Brand.FORD,Brand.SUZUKI,Brand.RENAULT,Brand.VOLKSWAGEN);
+    private final static List<Brand> validBrands = List.of(Brand.FORD, Brand.SUZUKI, Brand.RENAULT, Brand.VOLKSWAGEN);
     private final static List<BodyColor> validBodyColors = List.of(BodyColor.BLUE, BodyColor.RED, BodyColor.YELLOW);
 
     @java.lang.Override
     public boolean repair(Car1 car1) {
-        boolean carBrandMatch=false;
-        for(Brand validBrand:validBrands){
+        boolean carBrandMatch = false;
+        for (Brand validBrand : validBrands) {
             if (validBrand.equals(car1.getCarBrand())) {
-                carBrandMatch=true;
+                carBrandMatch = true;
                 break;
             }
         }
@@ -45,15 +46,16 @@ public class CheitaShopService1Impl implements CheitaShopService1 {
 
     @Override
     public boolean customize(Car1 car1, BodyColor desiredBodyColor) {
-        for(BodyColor validBodyColor: validBodyColors){
-            boolean desired
-            if(validBodyColor.equals(desiredBodyColor)) {
+        for (BodyColor validBodyColor : validBodyColors) {
+            boolean desired;
+            if (validBodyColor.equals(desiredBodyColor)) {
                 car1.setCarBodyColor(desiredBodyColor);
-                return ;
+                break;
             } else {
-                return;
+                break;
             }
         }
+        return true;
     }
 
     public void repair(Motorbike1 moto1) {
@@ -67,4 +69,18 @@ public class CheitaShopService1Impl implements CheitaShopService1 {
 
     }
 
+    @Override
+    public boolean camperize(Object van1) {
+        System.out.println("Class name: " + van1.getClass().getCanonicalName());
+        if (van1 instanceof CommercialVan1) {
+            CommercialVan1 commercialVan1 = (CommercialVan1) van1;
+            System.out.println("Van NOT camperized");
+            return false;
+        } else {
+            System.out.println("Van camperized");
+            ((Van1) van1).setCamperized(true);
+            return true;
+        }
+        System.out.println("X cannot be camperized");
+    }
 }

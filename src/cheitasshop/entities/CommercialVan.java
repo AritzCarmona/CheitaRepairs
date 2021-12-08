@@ -1,5 +1,5 @@
 package cheitasshop.entities;
 
-public class CommercialVan {
-
+public class CommercialVan extends Van{
+    private boolean motor,tires;
 }
