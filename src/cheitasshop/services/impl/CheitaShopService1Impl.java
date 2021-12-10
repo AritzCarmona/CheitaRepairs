@@ -25,15 +25,7 @@ public class CheitaShopService1Impl implements CheitaShopService1 {
                 break;
             }
         }
-//        for (Brand carBrand: Brand.values()) {
-//            if (carBrand.==car1.getCarBrand()) {
-//                carBrandMatch=true;
-//                break;
-//            } else {
-//                carBrandMatch=false;
-//            }
-//
-//        }
+
         if (carBrandMatch) {
             car1.setMotor(true);
             System.out.println("The motor is repaired.");
@@ -46,17 +38,22 @@ public class CheitaShopService1Impl implements CheitaShopService1 {
 
     @Override
     public boolean customize(Car1 car1, BodyColor desiredBodyColor) {
+        boolean desiredColorMatch=false;
         for (BodyColor validBodyColor : validBodyColors) {
-            boolean desired;
             if (validBodyColor.equals(desiredBodyColor)) {
-                car1.setCarBodyColor(desiredBodyColor);
-                break;
-            } else {
+                desiredColorMatch = true;
                 break;
             }
         }
-        return true;
-    }
+            if (desiredColorMatch) {
+                car1.setCarBodyColor(desiredBodyColor);
+                return true;
+            } else {
+                System.out.println("Sorry, not possible tu use that color.");
+                return false;
+            }
+        }
+
 
     public void repair(Motorbike1 moto1) {
         System.out.println("Motorbike repaired");
@@ -73,14 +70,16 @@ public class CheitaShopService1Impl implements CheitaShopService1 {
     public boolean camperize(Object van1) {
         System.out.println("Class name: " + van1.getClass().getCanonicalName());
         if (van1 instanceof CommercialVan1) {
-            CommercialVan1 commercialVan1 = (CommercialVan1) van1;
-            System.out.println("Van NOT camperized");
+            ((Van1) van1).setCamperized(false);
+            System.out.println("NOT possible to camperize, sorry");
             return false;
-        } else {
+        } else if (van1 instanceof Van1) {
             System.out.println("Van camperized");
             ((Van1) van1).setCamperized(true);
             return true;
+        } else {
+            System.out.println("X cannot be camperized");
+            return false;
         }
-        System.out.println("X cannot be camperized");
     }
 }

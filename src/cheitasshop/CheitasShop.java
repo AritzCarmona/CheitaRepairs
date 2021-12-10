@@ -1,6 +1,9 @@
 package cheitasshop;
 
 import cheitasshop.entities.*;
+import cheitasshop.entities.valueobject.Brand;
+
+import static cheitasshop.entities.valueobject.Brand.*;
 
 public class CheitasShop {
 
@@ -8,7 +11,7 @@ public class CheitasShop {
         //Car1 reparableCar1 = new Car1("AUDI", false);
         Motorbike1 reparableMotorbike1 = new Motorbike1();
         Van1 reparableVan1 = new Van1();
-        Car2 reparableCar2 = new Car2();
+        Car2 reparableCar2 = new Car2(SUZUKI);
         Motorbike2 reparableMotorbike2 = new Motorbike2();
         Van2 reparableVan2 = new Van2();
 
