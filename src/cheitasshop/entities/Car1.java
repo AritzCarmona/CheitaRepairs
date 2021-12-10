@@ -9,6 +9,7 @@ public class Car1 {
     private BodyColor carBodyColor;
     private boolean motor;
 
+
     public Car1(Brand carBrand, boolean motor) {
         this.carBrand = carBrand;
         this.motor = motor;

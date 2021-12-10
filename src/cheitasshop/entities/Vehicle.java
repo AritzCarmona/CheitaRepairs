@@ -6,11 +6,11 @@ import cheitasshop.entities.valueobject.Brand;
 public class Vehicle {
     protected Brand vehicleBrand;
     protected BodyColor vehicleBodyColor;
-    protected boolean tires = true;
-    protected boolean lights = true;
-    protected boolean motor = true;
-    protected boolean windows = true;
-    protected boolean frontParts = true;
+    protected boolean tires = true; //True broken, False fixed
+    protected boolean lights = true;//True broken, False fixed
+    protected boolean motor = true;//True broken, False fixed
+    protected boolean windows = true;//True broken, False fixed
+    protected boolean frontParts = true;//True broken, False fixed
 
     public Brand getVehicleBrand() {
         return vehicleBrand;

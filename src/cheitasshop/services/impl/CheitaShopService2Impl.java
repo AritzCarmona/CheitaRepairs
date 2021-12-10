@@ -3,7 +3,11 @@ package cheitasshop.services.impl;
 import cheitasshop.entities.*;
 import cheitasshop.entities.valueobject.BodyColor;
 import cheitasshop.entities.valueobject.Brand;
+import cheitasshop.entities.valueobject.CarParts;
+import cheitasshop.services.CheitaShopCarService;
+import cheitasshop.services.CheitaShopMotorbikeService;
 import cheitasshop.services.CheitaShopService2;
+import cheitasshop.services.CheitaShopVanService;
 
 import java.util.List;
 
@@ -15,47 +19,72 @@ public class CheitaShopService2Impl implements CheitaShopService2 {
     @Override
     public boolean repair(Vehicle vehicle) {
         if (vehicle instanceof Car2){
-            boolean carBrandMatch = false;
-            for (Brand validBrand : validBrands) {
-                if (validBrand.equals(vehicle.getVehicleBrand())) {
-                    carBrandMatch = true;
-                    break;
-                }
-            }
-
-            if (carBrandMatch) {
-                vehicle.setMotor(true);
-                System.out.println("The motor is repaired.");
-                return true;
-            } else {
-                System.out.println("Sorry, we don't repair your car brand.");
-                return false;
-            }
-
+            return repairCar(vehicle);
         } else if (vehicle instanceof Motorbike2) {
-            vehicle.setLights(true);
-            vehicle.setTires(true);
-            System.out.println("Motorbike fully repaired");
-            return true;
-
+            return repairMotorbike(vehicle);
         } else if (vehicle instanceof Van2) {
-            if(vehicle instanceof CommercialVan2) {
-                vehicle.setFrontParts(true);
-                vehicle.setWindows(true);
-                vehicle.setTires(true);
-                vehicle.setMotor(true);
-                System.out.println("Van fully repaired");
-                return true;
-            } else {
-                vehicle.setFrontParts(true);
-                vehicle.setWindows(true);
-                System.out.println("Commercial van fully repaired");
-                return true;
-            }
-        } else {
+            return repairVan(vehicle);
+        }else if(vehicle instanceof Truck2){
+            return repairTruck(vehicle);
+        }else {
             System.out.println("Not possible to repair!!");
             return false;
         }
+    }
+
+    private boolean repairTruck(Vehicle vehicle) {
+        System.out.println("Truck fully repaired");
+        return true;
+    }
+
+    private boolean repairVan(Vehicle vehicle) {
+        if(vehicle instanceof CommercialVan2) {
+            vehicle.setFrontParts(true);
+            vehicle.setWindows(true);
+            vehicle.setTires(true);
+            vehicle.setMotor(true);
+            System.out.println("Van fully repaired");
+            return true;
+        } else {
+            vehicle.setFrontParts(true);
+            vehicle.setWindows(true);
+            System.out.println("Commercial van fully repaired");
+            return true;
+        }
+    }
+
+    private boolean repairMotorbike(Vehicle vehicle) {
+        vehicle.setLights(true);
+        vehicle.setTires(true);
+        System.out.println("Motorbike fully repaired");
+        return true;
+    }
+
+     private Car2 repairCar(Vehicle vehicle) {
+        boolean carBrandMatch =  carBrandIsValid(vehicle);
+         if (carBrandMatch) {
+             List<CarParts> brokenParts= checkCarIssues((Car2)vehicle);
+             carReparation(vehicle);
+             return carRepared;
+        } else {
+            System.out.println("Sorry, we don't repair your car brand.");
+           //Throw something
+        }
+    }
+
+    //Motors, tires, windows, and doors(righ-left,back)
+    private void carReparation(Vehicle vehicle) {
+        vehicle.setMotor(true);
+        System.out.println("The motor is repaired.");
+    }
+
+    private boolean carBrandIsValid(Vehicle vehicle) {
+        for (Brand validBrand : validBrands) {
+            if (validBrand.equals(vehicle.getVehicleBrand())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

@@ -1,9 +1,6 @@
 package cheitasshop.services.impl;
 
-import cheitasshop.entities.Car1;
-import cheitasshop.entities.CommercialVan1;
-import cheitasshop.entities.Motorbike1;
-import cheitasshop.entities.Van1;
+import cheitasshop.entities.*;
 import cheitasshop.entities.valueobject.BodyColor;
 import cheitasshop.entities.valueobject.Brand;
 import cheitasshop.services.CheitaShopService1;
@@ -64,6 +61,11 @@ public class CheitaShopService1Impl implements CheitaShopService1 {
     public void repair(Van1 van1) {
         System.out.println("Van repaired");
 
+    }
+
+    @Override
+    public void repair(Truck truck) {
+        System.out.println("Truck fully repaired");
     }
 
     @Override
