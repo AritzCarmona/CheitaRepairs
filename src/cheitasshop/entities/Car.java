@@ -6,125 +6,154 @@ import cheitasshop.entities.valueobject.CarParts;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+import java.util.UUID;
 
 public class Car {
 
-	protected BodyColor carBodyColor;
-	protected Brand carBrand;
+    protected BodyColor carBodyColor;
+    protected Brand carBrand;
+    private String id;
 
-	Map<CarParts,Boolean> carPartsMap = new HashMap<>();
+    Map<CarParts, Boolean> carPartsMap = new HashMap<>();
 
-	//true means NOT REPAIRED
-	//false means REPAIRED
-/*	protected boolean windows;
-	protected boolean frontTires;
-	protected boolean rearTires;
-	protected boolean leftDoor;
-	protected boolean rightDoor;
-	protected boolean lights;
-	protected boolean body;
-	protected boolean motor;*/
+    //true means NOT REPAIRED
+    //false means REPAIRED
 
-	public Car(Brand carBrand, boolean isBroken) {
-		this.carBrand = carBrand;
-		carPartsMap.put(CarParts.BODY, isBroken);
-		carPartsMap.put(CarParts.WINDOWS, isBroken);
-		carPartsMap.put(CarParts.FRONT_TIRES, isBroken);
-		carPartsMap.put(CarParts.REAR_TIRES, isBroken);
-		carPartsMap.put(CarParts.LIGHTS, isBroken);
-		carPartsMap.put(CarParts.LEFT_DOOR, isBroken);
-		carPartsMap.put(CarParts.RIGHT_DOOR, isBroken);
-		carPartsMap.put(CarParts.MOTOR, isBroken);
+    public Car() {
+        this.id = UUID.randomUUID().toString();
+    }
 
-	}
+    public Car(Brand carBrand, boolean isBroken) {
+        this.id = UUID.randomUUID().toString();
+        this.carBrand = carBrand;
+        carPartsMap.put(CarParts.BODY, isBroken);
+        carPartsMap.put(CarParts.WINDOWS, isBroken);
+        carPartsMap.put(CarParts.FRONT_TIRES, isBroken);
+        carPartsMap.put(CarParts.REAR_TIRES, isBroken);
+        carPartsMap.put(CarParts.LIGHTS, isBroken);
+        carPartsMap.put(CarParts.LEFT_DOOR, isBroken);
+        carPartsMap.put(CarParts.RIGHT_DOOR, isBroken);
+        carPartsMap.put(CarParts.MOTOR, isBroken);
+    }
 
-	public BodyColor getCarBodyColor() {
-		return carBodyColor;
-	}
+    private Car(String id, BodyColor carBodyColor, Brand carBrand, Map<CarParts, Boolean> carPartsMap) {
+        this.id = id;
+        this.carBodyColor = carBodyColor;
+        this.carBrand = carBrand;
+        this.carPartsMap = carPartsMap;
+    }
 
-	public void setCarBodyColor(BodyColor carBodyColor) {
-		this.carBodyColor = carBodyColor;
-	}
+    public BodyColor getCarBodyColor() {
+        return carBodyColor;
+    }
 
-	public Brand getCarBrand() {
-		return carBrand;
-	}
+    public void setCarBodyColor(BodyColor carBodyColor) {
+        this.carBodyColor = carBodyColor;
+    }
 
-	public void setCarBrand(Brand carBrand) {
-		this.carBrand = carBrand;
-	}
+    public Brand getCarBrand() {
+        return carBrand;
+    }
 
-	public Map<CarParts, Boolean> getCarPartsMap() {
-		return carPartsMap;
-	}
+    public void setCarBrand(Brand carBrand) {
+        this.carBrand = carBrand;
+    }
 
-	public void setCarPartsMap(Map<CarParts, Boolean> carPartsMap) {
-		this.carPartsMap = carPartsMap;
-	}
+    public Map<CarParts, Boolean> getCarPartsMap() {
+        return carPartsMap;
+    }
+
+    public void setCarPartsMap(Map<CarParts, Boolean> carPartsMap) {
+        this.carPartsMap = carPartsMap;
+    }
 
 
-/*	public void setWindows(boolean windows) {
-		this.windows = windows;
-	}
+    public void setWindows(boolean windows) {
+        this.carPartsMap.put(CarParts.WINDOWS, windows);
+    }
 
-	public void setFrontTires(boolean frontTires) {
-		this.frontTires = frontTires;
-	}
+//	public void setFrontTires(boolean frontTires) {
+//		this.frontTires = frontTires;
+//	}
+//
+//	public void setRearTires(boolean rearTires) {
+//		this.rearTires = rearTires;
+//	}
+//
+//	public void setLeftDoor(boolean leftDoor) {
+//		this.leftDoor = leftDoor;
+//	}
+//
+//	public void setRightDoor(boolean rightDoor) {
+//		this.rightDoor = rightDoor;
+//	}
+//
+//	public void setLights(boolean lights) {
+//		this.lights = lights;
+//	}
+//
+//	public void setBody(boolean body) {
+//		this.body = body;
+//	}
+//
+//	public void setMotor(boolean motor) {
+//		this.motor = motor;
+//	}
 
-	public void setRearTires(boolean rearTires) {
-		this.rearTires = rearTires;
-	}
+    public boolean isWindows() {
+        return carPartsMap.get(CarParts.WINDOWS);
+    }
 
-	public void setLeftDoor(boolean leftDoor) {
-		this.leftDoor = leftDoor;
-	}
+    public boolean isFrontTires() {
+        return carPartsMap.get(CarParts.FRONT_TIRES);
+    }
 
-	public void setRightDoor(boolean rightDoor) {
-		this.rightDoor = rightDoor;
-	}
+    public boolean isRearTires() {
+        return carPartsMap.get(CarParts.REAR_TIRES);
+    }
 
-	public void setLights(boolean lights) {
-		this.lights = lights;
-	}
+    public boolean isLeftDoor() {
+        return carPartsMap.get(CarParts.LEFT_DOOR);
+    }
 
-	public void setBody(boolean body) {
-		this.body = body;
-	}
+    public boolean isRightDoor() {
+        return carPartsMap.get(CarParts.RIGHT_DOOR);
+    }
 
-	public void setMotor(boolean motor) {
-		this.motor = motor;
-	}
+//	public boolean isLights() {
+//		return lights;
+//	}
+//
+//	public boolean isBody() {
+//		return body;
+//	}
+//
+//	public boolean isMotor() {
+//		return motor;
+//	}
 
-	public boolean isWindows() {
-		return windows;
-	}
 
-	public boolean isFrontTires() {
-		return frontTires;
-	}
+    public void breakPart(CarParts carPart) {
+        this.getCarPartsMap().put(carPart, true);
+    }
 
-	public boolean isRearTires() {
-		return rearTires;
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(id, car.id);
+    }
 
-	public boolean isLeftDoor() {
-		return leftDoor;
-	}
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
-	public boolean isRightDoor() {
-		return rightDoor;
-	}
-
-	public boolean isLights() {
-		return lights;
-	}
-
-	public boolean isBody() {
-		return body;
-	}
-
-	public boolean isMotor() {
-		return motor;
-	}*/
+    @Override
+    public Car clone() {
+        return new Car(this.id, this.carBodyColor, this.carBrand, this.carPartsMap);
+    }
 }
 
