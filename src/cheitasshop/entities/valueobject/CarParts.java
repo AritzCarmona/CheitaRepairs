@@ -1,5 +1,5 @@
 package cheitasshop.entities.valueobject;
 
 public enum CarParts {
-    WINDOW,LEFT_TIRE,LEFT_DOOR,LIGHTS,BODY
+    WINDOWS, FRONT_TIRES, REAR_TIRES, LEFT_DOOR, RIGHT_DOOR,LIGHTS, BODY, MOTOR
 }

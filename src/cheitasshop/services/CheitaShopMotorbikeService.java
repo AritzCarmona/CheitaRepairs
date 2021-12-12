@@ -1,11 +1,10 @@
 package cheitasshop.services;
 
-import cheitasshop.entities.Vehicle;
+import cheitasshop.entities.Motorbike;
 
 public interface CheitaShopMotorbikeService {
 
-	void repair(Vehicle vehicle, boolean itemToBeRepaired);
+	boolean repair(Motorbike motorbike);
 
-	void customize(Vehicle vehicle);
 
 }

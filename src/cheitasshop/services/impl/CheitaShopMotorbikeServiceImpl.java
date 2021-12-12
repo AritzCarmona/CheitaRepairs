@@ -1,5 +1,6 @@
 package cheitasshop.services.impl;
 
+import cheitasshop.entities.Motorbike;
 import cheitasshop.entities.Vehicle;
 import cheitasshop.services.CheitaShopMotorbikeService;
 
@@ -7,12 +8,7 @@ public class CheitaShopMotorbikeServiceImpl implements CheitaShopMotorbikeServic
 
 
 	@Override
-	public void repair(Vehicle vehicle, boolean itemToBeRepaired) {
-
-	}
-
-	@Override
-	public void customize(Vehicle vehicle) {
-
+	public boolean repair(Motorbike motorbike) {
+		return false;
 	}
 }

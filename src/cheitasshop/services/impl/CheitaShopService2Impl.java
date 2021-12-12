@@ -60,16 +60,17 @@ public class CheitaShopService2Impl implements CheitaShopService2 {
         return true;
     }
 
-     private Car2 repairCar(Vehicle vehicle) {
-        boolean carBrandMatch =  carBrandIsValid(vehicle);
-         if (carBrandMatch) {
-             List<CarParts> brokenParts= checkCarIssues((Car2)vehicle);
-             carReparation(vehicle);
-             return carRepared;
-        } else {
-            System.out.println("Sorry, we don't repair your car brand.");
-           //Throw something
-        }
+     private boolean repairCar(Vehicle vehicle) {
+        return true;
+//        boolean carBrandMatch =  carBrandIsValid(vehicle);
+//         if (carBrandMatch) {
+//             List<CarParts> brokenParts= checkCarIssues((Car2)vehicle);
+//             carReparation(vehicle);
+//             return carRepaired;
+//        } else {
+//            System.out.println("Sorry, we don't repair your car brand.");
+//           //Throw something
+//        }
     }
 
     //Motors, tires, windows, and doors(righ-left,back)
