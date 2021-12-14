@@ -6,6 +6,6 @@ import cheitasshop.entities.valueobject.BodyColor;
 public interface CheitaShopCarService {
 
 	Car repair(Car car);
-	boolean customize(Car car, BodyColor desiredBodyColor);
+	Car customize(Car car, BodyColor desiredBodyColor);
 
 }

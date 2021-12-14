@@ -95,11 +95,11 @@ public class CheitaShopCarServiceImpl implements CheitaShopCarService {
 //        return car;
     }
 
-    private void carPartReparation(Car car, Map<CarParts, Boolean> reparingMap, CarParts brokenPart) {
-        if (car.getCarPartsMap().containsKey(brokenPart)) {
-            reparingMap.put(brokenPart, false);
-        }
-    }
+//    private void carPartReparation(Car car, Map<CarParts, Boolean> reparingMap, CarParts brokenPart) {
+//        if (car.getCarPartsMap().containsKey(brokenPart)) {
+//            reparingMap.put(brokenPart, false);
+//        }
+//    }
 
 
     private boolean carBrandIsValid(Car car) {
@@ -115,16 +115,15 @@ public class CheitaShopCarServiceImpl implements CheitaShopCarService {
     }
 
     @Override
-    public boolean customize(Car car, BodyColor desiredBodyColor) {
+    public Car customize(Car car, BodyColor desiredBodyColor) {
 
         boolean desiredColorMatch = desiredColorIsValid(desiredBodyColor);
         if (desiredColorMatch) {
             car.setCarBodyColor(desiredBodyColor);
-            return true;
         } else {
             System.out.println("Sorry, that color is not available.");
-            return false;
         }
+        return car;
 
     }
 

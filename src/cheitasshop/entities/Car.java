@@ -14,8 +14,7 @@ public class Car {
     protected BodyColor carBodyColor;
     protected Brand carBrand;
     private String id;
-
-    Map<CarParts, Boolean> carPartsMap = new HashMap<>();
+    protected Map<CarParts, Boolean> carPartsMap = new HashMap<>();
 
     //true means NOT REPAIRED
     //false means REPAIRED
@@ -69,37 +68,9 @@ public class Car {
     }
 
 
-    public void setWindows(boolean windows) {
-        this.carPartsMap.put(CarParts.WINDOWS, windows);
-    }
-
-//	public void setFrontTires(boolean frontTires) {
-//		this.frontTires = frontTires;
-//	}
-//
-//	public void setRearTires(boolean rearTires) {
-//		this.rearTires = rearTires;
-//	}
-//
-//	public void setLeftDoor(boolean leftDoor) {
-//		this.leftDoor = leftDoor;
-//	}
-//
-//	public void setRightDoor(boolean rightDoor) {
-//		this.rightDoor = rightDoor;
-//	}
-//
-//	public void setLights(boolean lights) {
-//		this.lights = lights;
-//	}
-//
-//	public void setBody(boolean body) {
-//		this.body = body;
-//	}
-//
-//	public void setMotor(boolean motor) {
-//		this.motor = motor;
-//	}
+//    public void setWindows(boolean windows) {
+//        this.carPartsMap.put(CarParts.WINDOWS, windows);
+//    }
 
     public boolean isWindows() {
         return carPartsMap.get(CarParts.WINDOWS);
@@ -121,17 +92,17 @@ public class Car {
         return carPartsMap.get(CarParts.RIGHT_DOOR);
     }
 
-//	public boolean isLights() {
-//		return lights;
-//	}
-//
-//	public boolean isBody() {
-//		return body;
-//	}
-//
-//	public boolean isMotor() {
-//		return motor;
-//	}
+	public boolean isLights() {
+		return carPartsMap.get(CarParts.LIGHTS);
+	}
+
+	public boolean isBody() {
+		return carPartsMap.get(CarParts.BODY);
+	}
+
+	public boolean isMotor() {
+		return carPartsMap.get(CarParts.MOTOR);
+	}
 
 
     public void breakPart(CarParts carPart) {

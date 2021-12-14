@@ -2,7 +2,7 @@ package cheitasshop.services;
 
 import cheitasshop.entities.Van;
 
-public interface CheitaShopVanService {
-    boolean repair(Van van);
-    boolean camperize(Van van);
+public interface CheitaShopVanService <T> {
+    T repair(T genericVan);
+    T camperize(T genericVan);
 }

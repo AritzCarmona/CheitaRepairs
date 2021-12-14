@@ -13,7 +13,7 @@ public class Assertions {
             System.out.println("Green they are the same :)");
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(left.toString() + " is not equals to " + right.toString());
+            System.out.println(left.toString() + " is not equal to " + right.toString());
         }
     }
 

@@ -28,14 +28,14 @@ public class CheitaShopCarServiceShould {
         Car brokenCar = new Car();
         brokenCar.setCarBrand(Brand.SUZUKI);
         brokenCar.breakPart(CarParts.WINDOWS);
-        Car carRepaired = sut.repair(brokenCar);
-        boolean areEquals = brokenCar == carRepaired;
+        Car repairedCar = sut.repair(brokenCar);
+        boolean areEquals = brokenCar == repairedCar;
         Assertions.isEquals(areEquals,false);
-        boolean areEquals2 = brokenCar.equals(carRepaired);
+        boolean areEquals2 = brokenCar.equals(repairedCar);
         Assertions.isEquals(areEquals2,true);
 //        Assertions.isEquals(carRepaired.isFrontTires(), false);
 //        Assertions.isEquals(carRepaired,expectedCarRepaired);
-        Assertions.isEquals(carRepaired.isWindows(), false);
+        Assertions.isEquals(repairedCar.isWindows(), false);
 //        Assertions.isEquals(brokenCar.isLeftDoor(), carRepaired.isLeftDoor());
 //        Assertions.isEquals(brokenCar.isLights(), carRepaired.isLights());
 //        Assertions.isEquals(brokenCar.isBody(), carRepaired.isBody());
